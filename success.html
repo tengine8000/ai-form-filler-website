@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — AI Form Filler</title>
+  <meta name="description" content="Thank you for supporting AI Form Filler. You're helping keep it free for everyone." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .success-page {
+      min-height: calc(100vh - 64px - 80px); /* viewport minus nav and footer */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 1.5rem;
+      background: linear-gradient(165deg, #f8f9ff 0%, #ffffff 60%);
+    }
+
+    .success-card {
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+      border: 2px solid #fbcfe8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.25rem;
+      margin: 0 auto 2rem;
+    }
+
+    .success-card h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--gray-900);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .success-card p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .success-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .success-note {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Nav ──────────────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="assets/logo.png" alt="AI Form Filler" />
+      AI Form Filler
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#how-it-works">How it works</a></li>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li>
+        <a href="https://chromewebstore.google.com" target="_blank" rel="noopener" class="btn-nav">
+          Add to Chrome
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── Success Content ───────────────────────────────────────────────────────── -->
+<main class="success-page">
+  <div class="success-card">
+    <div class="success-icon">♥</div>
+
+    <h1>You're a legend.</h1>
+
+    <p>
+      Your support means AI Form Filler stays free for everyone.
+      Every contribution — big or small — goes directly into keeping
+      the extension maintained, improved, and independent.
+    </p>
+
+    <div class="success-actions">
+      <a href="/" class="btn-primary">
+        ← Back to home
+      </a>
+      <a
+        href="https://chromewebstore.google.com"
+        target="_blank"
+        rel="noopener"
+        class="btn-secondary"
+      >
+        Get the extension
+      </a>
+    </div>
+
+    <p class="success-note">
+      No account needed. Powered by Polar.sh.
+    </p>
+  </div>
+</main>
+
+<!-- ─── Footer ────────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container footer-inner">
+    <a href="/" class="footer-logo">
+      <img src="assets/logo.png" alt="AI Form Filler" />
+      AI Form Filler
+    </a>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://buy.polar.sh/polar_cl_wvmlqRGYvEUflPlrlmziv4waILTtmAHlUy9Mp4KEsuv" data-polar-checkout data-polar-checkout-theme="dark">Support ♥</a>
+    </div>
+    <p class="footer-copy">Built with ♥ for job seekers and developers &nbsp;·&nbsp; MIT Licensed</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
+</body>
+</html>
