@@ -78,12 +78,6 @@ nav {
   border-radius: 6px;
 }
 
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -718,22 +712,30 @@ footer {
 
 /* ─── Dark mode toggle button ────────────────────────────────────────────────── */
 .dark-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: 1px solid var(--gray-200);
   border-radius: 8px;
-  padding: 0.35rem 0.55rem;
-  font-size: 1rem;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
-  color: var(--gray-600);
-  transition: border-color 0.15s, background 0.15s;
-  line-height: 1;
+  color: var(--gray-500);
   flex-shrink: 0;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
 }
 
 .dark-toggle:hover {
   border-color: var(--indigo);
+  color: var(--indigo);
   background: var(--indigo-light);
 }
+
+.dark-toggle .icon-moon { display: block; }
+.dark-toggle .icon-sun  { display: none; }
+.dark-toggle.is-dark .icon-moon { display: none; }
+.dark-toggle.is-dark .icon-sun  { display: block; }
 
 /* ─── Rotating headline word ────────────────────────────────────────────────── */
 #rotating-use-case {
@@ -838,7 +840,6 @@ footer {
 /* ─── Mobile ────────────────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
   .nav-links { display: none; }
-  .dark-toggle { display: flex; }
   .hero { padding: 4rem 0 3rem; }
   .social-bar-inner { gap: 1.5rem; }
   .footer-top { flex-direction: column; align-items: center; text-align: center; }

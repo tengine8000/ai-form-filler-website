@@ -2,23 +2,25 @@
 const htmlEl = document.documentElement
 const darkBtn = document.getElementById('dark-mode-toggle')
 
-if (localStorage.getItem('aiff-theme') === 'dark') {
-  htmlEl.setAttribute('data-theme', 'dark')
-  if (darkBtn) darkBtn.textContent = '☀'
+function applyTheme(dark) {
+  if (dark) {
+    htmlEl.setAttribute('data-theme', 'dark')
+    if (darkBtn) darkBtn.classList.add('is-dark')
+  } else {
+    htmlEl.removeAttribute('data-theme')
+    if (darkBtn) darkBtn.classList.remove('is-dark')
+  }
 }
+
+// Apply saved preference (inline <script> in <head> already set data-theme,
+// but we still need to sync the button class)
+applyTheme(localStorage.getItem('aiff-theme') === 'dark')
 
 if (darkBtn) {
   darkBtn.addEventListener('click', () => {
-    const isDark = htmlEl.getAttribute('data-theme') === 'dark'
-    if (isDark) {
-      htmlEl.removeAttribute('data-theme')
-      darkBtn.textContent = '🌙'
-      localStorage.setItem('aiff-theme', 'light')
-    } else {
-      htmlEl.setAttribute('data-theme', 'dark')
-      darkBtn.textContent = '☀'
-      localStorage.setItem('aiff-theme', 'dark')
-    }
+    const goingDark = htmlEl.getAttribute('data-theme') !== 'dark'
+    localStorage.setItem('aiff-theme', goingDark ? 'dark' : 'light')
+    applyTheme(goingDark)
   })
 }
 
