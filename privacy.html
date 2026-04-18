@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — AI Form Filler</title>
+  <meta name="description" content="Learn how AI Form Filler handles your data. Spoiler: we don't — your data never leaves your browser." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>if(localStorage.getItem('aiff-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')</script>
+</head>
+<body>
+
+<!-- ─── Nav ──────────────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="assets/logo.png" alt="AI Form Filler" />
+      AI Form Filler
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li>
+          <a href="https://chromewebstore.google.com" target="_blank" rel="noopener" class="btn-nav">
+            Add to Chrome
+          </a>
+        </li>
+      </ul>
+      <button id="dark-mode-toggle" class="dark-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── Content ───────────────────────────────────────────────────────────────── -->
+<main class="legal-page">
+  <a href="/" class="back-link">← Back</a>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: April 2025</p>
+
+  <div class="legal-content">
+
+    <section>
+      <h2>1. Who We Are</h2>
+      <p>
+        AI Form Filler ("we", "us", or "our") is a free Chrome extension that fills web forms
+        in one click using a profile you save locally in your browser. The extension has no backend —
+        your data is never transmitted to our servers because we don't have any.
+      </p>
+      <p>
+        If you have questions about this policy, contact us at
+        <a href="mailto:nimblesoftlimited@gmail.com">nimblesoftlimited@gmail.com</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Data the Extension Collects</h2>
+      <p>
+        The extension stores the following exclusively in your browser using
+        <code>chrome.storage.local</code> — it never leaves your device:
+      </p>
+      <ul>
+        <li>Your profile (name, email, address, work history, skills, and any other fields you fill in)</li>
+        <li>Your AI provider API keys (e.g. OpenAI, Anthropic, Google)</li>
+        <li>Extension settings and preferences</li>
+        <li>Fill metrics (counts of forms filled — stored locally, never uploaded)</li>
+      </ul>
+      <p>
+        No one — including us — can access this data. It is visible only to you
+        and to the AI provider you configure (when you trigger a fill using an API key).
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Data This Website Collects</h2>
+      <p>
+        This website (aiformfiller.org) is a static HTML page. We do not run any
+        analytics, tracking scripts, or server-side logging beyond what is standard
+        in web server access logs (IP address, browser type, page visited). We do not
+        use advertising cookies or third-party tracking pixels.
+      </p>
+    </section>
+
+    <section>
+      <h2>4. AI Providers</h2>
+      <p>
+        When you use an AI-powered fill, your profile data and the form field labels
+        from the current page are sent directly from your browser to the AI provider
+        you have configured (e.g. Anthropic, OpenAI, Google, OpenRouter). This data
+        is governed by that provider's own privacy policy. We have no visibility into
+        these requests.
+      </p>
+      <p>
+        If you use the offline (local fill) mode, no data leaves your browser at all.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Payments</h2>
+      <p>
+        Voluntary support payments are processed by
+        <a href="https://polar.sh" target="_blank" rel="noopener">Polar.sh</a>,
+        which acts as Merchant of Record. We do not collect or store any payment
+        card information. Polar's own privacy policy governs data collected during checkout.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. Third-Party Services</h2>
+      <p>The only third-party integrations on this website are:</p>
+      <ul>
+        <li><strong>Polar.sh</strong> — payment processing for voluntary support</li>
+        <li><strong>GitHub</strong> — source code hosting (MIT licensed)</li>
+        <li><strong>jsDelivr</strong> — CDN for the Polar checkout embed script</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Cookies</h2>
+      <p>
+        This website does not set any first-party cookies. The Polar checkout
+        embed may set cookies governed by Polar's policy. The extension does not
+        use cookies — it uses <code>chrome.storage.local</code> instead.
+      </p>
+    </section>
+
+    <section>
+      <h2>8. Your Rights</h2>
+      <p>
+        Because we hold no personal data on our servers, there is nothing for us
+        to access, export, or delete on your behalf. To remove your extension data,
+        uninstall the extension or use the "Clear all data" option in its settings.
+      </p>
+      <p>
+        For any other data questions, contact us at
+        <a href="mailto:nimblesoftlimited@gmail.com">nimblesoftlimited@gmail.com</a>
+        and we will respond within 30 days.
+      </p>
+    </section>
+
+    <section>
+      <h2>9. Security</h2>
+      <p>
+        This website is served over HTTPS. The extension stores all sensitive data
+        (API keys, profile) in <code>chrome.storage.local</code>, which is scoped
+        to the extension and inaccessible to other extensions or websites.
+        We encourage you to use a strong, unique API key and rotate it if you
+        suspect it has been compromised.
+      </p>
+    </section>
+
+    <section>
+      <h2>10. Children</h2>
+      <p>
+        AI Form Filler is not directed at children under 13. We do not knowingly
+        collect data from children. If you believe a child has submitted data
+        through the extension, please contact us for guidance on removing it locally.
+      </p>
+    </section>
+
+    <section>
+      <h2>11. Changes to This Policy</h2>
+      <p>
+        We may update this policy from time to time. When we do, we will update
+        the "Last updated" date at the top of this page.
+      </p>
+    </section>
+
+  </div>
+</main>
+
+<!-- ─── Footer ────────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <a href="/" class="footer-logo">
+        <img src="assets/logo.png" alt="AI Form Filler" />
+        AI Form Filler
+      </a>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://buy.polar.sh/polar_cl_wvmlqRGYvEUflPlrlmziv4waILTtmAHlUy9Mp4KEsuv" data-polar-checkout data-polar-checkout-theme="dark">Support ♥</a>
+      </div>
+    </div>
+    <p class="footer-copy">Built with ♥ for every professional online &nbsp;·&nbsp; MIT Licensed</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
+</body>
+</html>

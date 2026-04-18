@@ -1,3 +1,27 @@
+// ─── Dark mode toggle ─────────────────────────────────────────────────────────
+const htmlEl = document.documentElement
+const darkBtn = document.getElementById('dark-mode-toggle')
+
+if (localStorage.getItem('aiff-theme') === 'dark') {
+  htmlEl.setAttribute('data-theme', 'dark')
+  if (darkBtn) darkBtn.textContent = '☀'
+}
+
+if (darkBtn) {
+  darkBtn.addEventListener('click', () => {
+    const isDark = htmlEl.getAttribute('data-theme') === 'dark'
+    if (isDark) {
+      htmlEl.removeAttribute('data-theme')
+      darkBtn.textContent = '🌙'
+      localStorage.setItem('aiff-theme', 'light')
+    } else {
+      htmlEl.setAttribute('data-theme', 'dark')
+      darkBtn.textContent = '☀'
+      localStorage.setItem('aiff-theme', 'dark')
+    }
+  })
+}
+
 // ─── Rotating headline use cases ─────────────────────────────────────────────
 const USE_CASES = [
   'Job Applications',
