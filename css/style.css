@@ -837,11 +837,95 @@ footer {
   text-underline-offset: 2px;
 }
 
+/* ─── Hamburger menu ────────────────────────────────────────────────────────── */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 36px;
+  height: 36px;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 22px;
+  background: var(--gray-700);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ─── Mobile ────────────────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-100);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 0;
+    box-shadow: var(--shadow-md);
+    z-index: 99;
+  }
+
+  .nav-links.is-open { display: flex; }
+
+  .nav-links li { width: 100%; }
+
+  .nav-links a,
+  .nav-links .dark-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .nav-links .btn-nav {
+    margin: 0.5rem 1.5rem;
+    width: calc(100% - 3rem);
+    justify-content: center;
+  }
+
+  .nav-links .dark-toggle {
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
   .hero { padding: 4rem 0 3rem; }
   .social-bar-inner { gap: 1.5rem; }
   .footer-top { flex-direction: column; align-items: center; text-align: center; }
   .footer-logo { justify-content: center; }
 }
+
+[data-theme="dark"] .nav-links {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+[data-theme="dark"] .hamburger span { background: #94a3b8; }

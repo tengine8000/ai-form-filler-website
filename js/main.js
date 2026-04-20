@@ -24,6 +24,28 @@ if (darkBtn) {
   })
 }
 
+// ─── Hamburger menu ───────────────────────────────────────────────────────────
+const hamburger = document.getElementById('nav-hamburger')
+const navLinks = document.getElementById('nav-links')
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('is-open')
+    hamburger.classList.toggle('is-open', isOpen)
+    hamburger.setAttribute('aria-expanded', String(isOpen))
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu')
+  })
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('is-open')
+      hamburger.classList.remove('is-open')
+      hamburger.setAttribute('aria-expanded', 'false')
+      hamburger.setAttribute('aria-label', 'Open menu')
+    })
+  })
+}
+
 // ─── Rotating headline use cases ─────────────────────────────────────────────
 const USE_CASES = [
   'Job Applications',
