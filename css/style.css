@@ -85,6 +85,8 @@ nav {
   list-style: none;
 }
 
+.nav-links li { list-style: none; }
+
 .nav-links a {
   font-size: 0.875rem;
   color: var(--gray-500);
