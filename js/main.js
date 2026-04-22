@@ -101,7 +101,7 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el))
 
-// ─── FAQ accordion keyboard support ──────────────────────────────────────────
+// ─── FAQ accordion keyboard support + open tracking ──────────────────────────
 document.querySelectorAll('summary').forEach(summary => {
   summary.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -109,14 +109,21 @@ document.querySelectorAll('summary').forEach(summary => {
       summary.parentElement.toggleAttribute('open')
     }
   })
+
+  summary.addEventListener('click', () => {
+    const isCurrentlyOpen = summary.parentElement.hasAttribute('open')
+    if (!isCurrentlyOpen && typeof gtag !== 'undefined') {
+      gtag('event', 'faq_opened', { question: summary.textContent.trim().slice(0, 100) })
+    }
+  })
 })
 
-// ─── Smooth CTA tracking (optional: replace with real analytics later) ───────
+// ─── CTA click tracking ───────────────────────────────────────────────────────
 document.querySelectorAll('a[data-cta]').forEach(link => {
   link.addEventListener('click', () => {
     const label = link.getAttribute('data-cta')
-    // eslint-disable-next-line no-console
-    console.log('[AIFF] CTA clicked:', label)
-    // TODO: replace with real analytics call, e.g. plausible('CTA Click', { props: { label } })
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'cta_click', { cta_label: label })
+    }
   })
 })
